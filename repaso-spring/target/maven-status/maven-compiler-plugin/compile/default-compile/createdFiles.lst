@@ -1,0 +1,13 @@
+com\compunet\service\MeasurementService.class
+com\compunet\repository\MeasurementRepositoryImpl.class
+com\compunet\service\DeviceService.class
+com\compunet\servlet\ListMeasurementsServlet.class
+com\compunet\service\DeviceServiceImpl.class
+com\compunet\repository\DeviceRepository.class
+com\compunet\repository\DeviceRepositoryImpl.class
+com\compunet\model\Measurement.class
+com\compunet\config\AppConfig.class
+com\compunet\servlet\CreateMeasurementServlet.class
+com\compunet\model\Device.class
+com\compunet\repository\MeasurementRepository.class
+com\compunet\service\MeasurementServiceImpl.class

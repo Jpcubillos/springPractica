@@ -1,0 +1,17 @@
+C:\Users\cubil\OneDrive\Desktop\COMPUNET2\Compunet2practica\spring-servlet-reference\src\main\java\com\reference\config\AppConfig.java
+C:\Users\cubil\OneDrive\Desktop\COMPUNET2\Compunet2practica\spring-servlet-reference\src\main\java\com\reference\model\Parent.java
+C:\Users\cubil\OneDrive\Desktop\COMPUNET2\Compunet2practica\spring-servlet-reference\src\main\java\com\reference\model\Record.java
+C:\Users\cubil\OneDrive\Desktop\COMPUNET2\Compunet2practica\spring-servlet-reference\src\main\java\com\reference\repository\InMemoryParentRepository.java
+C:\Users\cubil\OneDrive\Desktop\COMPUNET2\Compunet2practica\spring-servlet-reference\src\main\java\com\reference\repository\InMemoryRecordRepository.java
+C:\Users\cubil\OneDrive\Desktop\COMPUNET2\Compunet2practica\spring-servlet-reference\src\main\java\com\reference\repository\ParentRepository.java
+C:\Users\cubil\OneDrive\Desktop\COMPUNET2\Compunet2practica\spring-servlet-reference\src\main\java\com\reference\repository\RecordRepository.java
+C:\Users\cubil\OneDrive\Desktop\COMPUNET2\Compunet2practica\spring-servlet-reference\src\main\java\com\reference\service\ParentService.java
+C:\Users\cubil\OneDrive\Desktop\COMPUNET2\Compunet2practica\spring-servlet-reference\src\main\java\com\reference\service\ParentServiceImpl.java
+C:\Users\cubil\OneDrive\Desktop\COMPUNET2\Compunet2practica\spring-servlet-reference\src\main\java\com\reference\service\RecordService.java
+C:\Users\cubil\OneDrive\Desktop\COMPUNET2\Compunet2practica\spring-servlet-reference\src\main\java\com\reference\service\RecordServiceImpl.java
+C:\Users\cubil\OneDrive\Desktop\COMPUNET2\Compunet2practica\spring-servlet-reference\src\main\java\com\reference\servlet\CreateRecordServlet.java
+C:\Users\cubil\OneDrive\Desktop\COMPUNET2\Compunet2practica\spring-servlet-reference\src\main\java\com\reference\servlet\DeleteRecordServlet.java
+C:\Users\cubil\OneDrive\Desktop\COMPUNET2\Compunet2practica\spring-servlet-reference\src\main\java\com\reference\servlet\FindRecordServlet.java
+C:\Users\cubil\OneDrive\Desktop\COMPUNET2\Compunet2practica\spring-servlet-reference\src\main\java\com\reference\servlet\ListRecordsServlet.java
+C:\Users\cubil\OneDrive\Desktop\COMPUNET2\Compunet2practica\spring-servlet-reference\src\main\java\com\reference\servlet\ServletHtml.java
+C:\Users\cubil\OneDrive\Desktop\COMPUNET2\Compunet2practica\spring-servlet-reference\src\main\java\com\reference\servlet\UpdateRecordServlet.java

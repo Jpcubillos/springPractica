@@ -1,0 +1,17 @@
+com\reference\servlet\CreateRecordServlet.class
+com\reference\repository\RecordRepository.class
+com\reference\service\ParentServiceImpl.class
+com\reference\repository\InMemoryParentRepository.class
+com\reference\servlet\FindRecordServlet.class
+com\reference\servlet\ListRecordsServlet.class
+com\reference\servlet\ServletHtml.class
+com\reference\repository\ParentRepository.class
+com\reference\config\AppConfig.class
+com\reference\service\ParentService.class
+com\reference\model\Record.class
+com\reference\repository\InMemoryRecordRepository.class
+com\reference\service\RecordService.class
+com\reference\servlet\DeleteRecordServlet.class
+com\reference\service\RecordServiceImpl.class
+com\reference\model\Parent.class
+com\reference\servlet\UpdateRecordServlet.class

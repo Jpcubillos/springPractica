@@ -13,11 +13,13 @@ public class RecordServiceImpl implements RecordService {
     private final RecordRepository recordRepository;
     private final ParentService parentService;
 
+    // Recibe por constructor el repository y el service relacionado que Spring debe inyectar.
     public RecordServiceImpl(RecordRepository recordRepository, ParentService parentService) {
         this.recordRepository = recordRepository;
         this.parentService = parentService;
     }
 
+    // Valida datos, busca el Parent relacionado, aplica reglas y guarda el Record.
     @Override
     public Record save(Record record) {
         validateBasicRecord(record);
@@ -27,22 +29,26 @@ public class RecordServiceImpl implements RecordService {
         return recordRepository.save(record);
     }
 
+    // Busca un Record por id y devuelve Optional.empty si no existe.
     @Override
     public Optional<Record> findById(Long id) {
         return recordRepository.findById(id);
     }
 
+    // Busca un Record obligatorio y lanza IllegalArgumentException si no existe.
     @Override
     public Record findRequiredById(Long id) {
         return recordRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("No existe el Record con id " + id));
     }
 
+    // Devuelve todos los Record delegando al repository.
     @Override
     public List<Record> findAll() {
         return recordRepository.findAll();
     }
 
+    // Valida que el Record exista, este activo y cumpla reglas antes de actualizar.
     @Override
     public Record update(Record record) {
         validateBasicRecord(record);
@@ -56,6 +62,7 @@ public class RecordServiceImpl implements RecordService {
         return recordRepository.update(record);
     }
 
+    // Inactiva un Record existente en lugar de borrarlo fisicamente.
     @Override
     public boolean deleteById(Long id) {
         Record record = findRequiredById(id);
@@ -67,17 +74,20 @@ public class RecordServiceImpl implements RecordService {
         return true;
     }
 
+    // Valida que el Parent exista y devuelve sus Records relacionados.
     @Override
     public List<Record> findByParentId(Long parentId) {
         Parent parent = parentService.findRequiredById(parentId);
         return recordRepository.findByParentId(parent.getId());
     }
 
+    // Devuelve Record filtrados por estado activo/inactivo.
     @Override
     public List<Record> findByStatus(boolean active) {
         return recordRepository.findByStatus(active);
     }
 
+    // Agrupa validaciones basicas del Record antes de revisar reglas con Parent.
     private void validateBasicRecord(Record record) {
         if (record == null) {
             throw new IllegalArgumentException("El Record no puede ser nulo");
@@ -102,6 +112,7 @@ public class RecordServiceImpl implements RecordService {
         }
     }
 
+    // Valida reglas que dependen del Parent: duplicados, rango, capacidad y periodo.
     private void validateRecordBelongsToParentRules(Record record, Parent parent, boolean updating) {
         if (!updating && recordRepository.existsById(record.getId())) {
             throw new IllegalArgumentException("Ya existe un Record con id " + record.getId());
@@ -123,6 +134,7 @@ public class RecordServiceImpl implements RecordService {
                 .ifPresent(previous -> validateSamplingPeriod(previous, record, parent));
     }
 
+    // Compara el timestamp actual contra el anterior usando periodo y tolerancia.
     private void validateSamplingPeriod(Record previous, Record current, Parent parent) {
         if (current.getTimestamp() <= previous.getTimestamp()) {
             throw new IllegalArgumentException("El timestamp nuevo debe ser mayor que el anterior");
@@ -136,6 +148,7 @@ public class RecordServiceImpl implements RecordService {
         }
     }
 
+    // Impide operar sobre un Parent inactivo.
     private void validateParentIsActive(Parent parent) {
         if (!parent.isActive()) {
             throw new IllegalArgumentException("No se permite operar sobre un Parent inactivo");

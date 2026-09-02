@@ -17,6 +17,7 @@ import java.io.PrintWriter;
 public class CreateRecordServlet extends HttpServlet {
     private RecordService recordService;
 
+    // Obtiene desde Spring el RecordService que usara el servlet.
     @Override
     public void init() throws ServletException {
         WebApplicationContext context = WebApplicationContextUtils
@@ -24,6 +25,7 @@ public class CreateRecordServlet extends HttpServlet {
         recordService = context.getBean(RecordService.class);
     }
 
+    // Muestra el formulario HTML para crear un Record.
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String contextPath = request.getContextPath();
@@ -41,6 +43,7 @@ public class CreateRecordServlet extends HttpServlet {
         ServletHtml.end(out);
     }
 
+    // Lee los parametros del formulario, crea el Record y lo manda al service.
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String contextPath = request.getContextPath();

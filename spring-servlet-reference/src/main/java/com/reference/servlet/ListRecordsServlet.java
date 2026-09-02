@@ -18,6 +18,7 @@ import java.util.List;
 public class ListRecordsServlet extends HttpServlet {
     private RecordService recordService;
 
+    // Obtiene desde Spring el RecordService que usara el servlet.
     @Override
     public void init() throws ServletException {
         WebApplicationContext context = WebApplicationContextUtils
@@ -25,6 +26,7 @@ public class ListRecordsServlet extends HttpServlet {
         recordService = context.getBean(RecordService.class);
     }
 
+    // Muestra una tabla con Records y permite aplicar un limite opcional.
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String contextPath = request.getContextPath();

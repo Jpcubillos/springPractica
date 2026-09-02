@@ -17,6 +17,7 @@ import java.io.PrintWriter;
 public class UpdateRecordServlet extends HttpServlet {
     private RecordService recordService;
 
+    // Obtiene desde Spring el RecordService que usara el servlet.
     @Override
     public void init() throws ServletException {
         WebApplicationContext context = WebApplicationContextUtils
@@ -24,6 +25,7 @@ public class UpdateRecordServlet extends HttpServlet {
         recordService = context.getBean(RecordService.class);
     }
 
+    // Busca el Record actual y muestra el formulario con sus datos cargados.
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String contextPath = request.getContextPath();
@@ -50,6 +52,7 @@ public class UpdateRecordServlet extends HttpServlet {
         }
     }
 
+    // Lee los parametros editados, arma el Record y lo actualiza por service.
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String contextPath = request.getContextPath();

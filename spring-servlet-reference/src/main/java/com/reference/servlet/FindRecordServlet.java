@@ -17,6 +17,7 @@ import java.io.PrintWriter;
 public class FindRecordServlet extends HttpServlet {
     private RecordService recordService;
 
+    // Obtiene desde Spring el RecordService que usara el servlet.
     @Override
     public void init() throws ServletException {
         WebApplicationContext context = WebApplicationContextUtils
@@ -24,6 +25,7 @@ public class FindRecordServlet extends HttpServlet {
         recordService = context.getBean(RecordService.class);
     }
 
+    // Muestra el formulario HTML para buscar un Record por id.
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String contextPath = request.getContextPath();
@@ -36,6 +38,7 @@ public class FindRecordServlet extends HttpServlet {
         ServletHtml.end(out);
     }
 
+    // Lee el id del formulario y muestra el Record encontrado.
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String contextPath = request.getContextPath();

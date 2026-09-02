@@ -16,6 +16,7 @@ import java.io.PrintWriter;
 public class DeleteRecordServlet extends HttpServlet {
     private RecordService recordService;
 
+    // Obtiene desde Spring el RecordService que usara el servlet.
     @Override
     public void init() throws ServletException {
         WebApplicationContext context = WebApplicationContextUtils
@@ -23,6 +24,7 @@ public class DeleteRecordServlet extends HttpServlet {
         recordService = context.getBean(RecordService.class);
     }
 
+    // Muestra una confirmacion antes de eliminar o inactivar el Record.
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String contextPath = request.getContextPath();
@@ -41,6 +43,7 @@ public class DeleteRecordServlet extends HttpServlet {
         }
     }
 
+    // Lee el id confirmado, llama al service y redirige al listado.
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String contextPath = request.getContextPath();
